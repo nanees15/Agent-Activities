@@ -19,7 +19,7 @@ public class Login_Activity extends AppCompatActivity {
         login_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Login_Activity.this, Activities_Calendar.class));
+                startActivity(new Intent(Login_Activity.this, Activity_Report_Details.class));
                 // Finish the current activity
                 finish();
             }
