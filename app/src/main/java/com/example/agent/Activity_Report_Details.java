@@ -40,8 +40,8 @@ public class Activity_Report_Details extends AppCompatActivity {
 
         Intent intent= new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
-        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, "ar-EG,en-US");
-        intent.putExtra(RecognizerIntent.EXTRA_PROMPT,"Hi Speak");
+        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, "ar");
+        intent.putExtra(RecognizerIntent.EXTRA_PROMPT," تحدث");
 
         try {
             startActivityForResult(intent,REQUEST_CODE_SPEECH_INPUT);
