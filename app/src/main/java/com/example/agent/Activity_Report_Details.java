@@ -1,8 +1,12 @@
 package com.example.agent;
+import android.Manifest;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.content.pm.PackageManager;
+import android.media.MediaPlayer;
 import android.media.MediaRecorder;
 import android.os.Environment;
 
@@ -24,7 +28,11 @@ public class Activity_Report_Details extends AppCompatActivity {
 
     private static final int REQUEST_CODE_SPEECH_INPUT = 1000;
     private MediaRecorder mediaRecorder ;
-    private static final String AUDIO_FILE_PATH = Environment.getExternalStorageDirectory() + "/recorded_audio.mp3";
+    private boolean isRecording = false;
+
+    private MediaPlayer mediaPlayer;
+
+    private  String AudioSavedPath = null;
     ImageButton VoiceBtn;
     Button Forward;
     TextView test;
@@ -52,46 +60,69 @@ public class Activity_Report_Details extends AppCompatActivity {
             public void onClick(View v) {
 //                speak();
 
-                startRecording();
+
+               if(!isRecording)
+               {
+                   startRecording();
+               }
+               else {
+                   stopRecording();
+               }
+
             }
         });
+
+
     }
 
-    private boolean isRecording = false;
+    private boolean CheckPermissions(){
 
-    private void startRecording() {
-        if (isRecording) {
-            stopRecording();
-        }
+        int first = ActivityCompat.checkSelfPermission(getApplicationContext(),Manifest.permission.RECORD_AUDIO);
 
-        mediaRecorder = new MediaRecorder();
+        int second = ActivityCompat.checkSelfPermission(getApplicationContext(),Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        return (first == PackageManager.PERMISSION_GRANTED && second == PackageManager.PERMISSION_GRANTED) ;
+    }
 
-        try {
-            // Set audio source and output format
+
+
+
+    private void startRecording()
+    {
+        if(CheckPermissions() == true)
+        {
+            AudioSavedPath = Environment.getExternalStorageDirectory().getAbsolutePath()
+                    +"/"+"recordingAudio.mp3";
+
+            mediaRecorder = new MediaRecorder();
             mediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
             mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);
             mediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AAC);
-            mediaRecorder.setOutputFile(AUDIO_FILE_PATH);
+            mediaRecorder.setOutputFile(AudioSavedPath);
 
-            // Prepare and start recording
-            mediaRecorder.prepare();
-            mediaRecorder.start();
-            isRecording = true;
-            Toast.makeText(this, "Recording started", Toast.LENGTH_SHORT).show();
-        } catch (IOException e) {
-            e.printStackTrace();
-            Toast.makeText(this, "Failed to start recording", Toast.LENGTH_SHORT).show();
+            try {
+                mediaRecorder.prepare();
+                mediaRecorder.start();
+                Toast.makeText(Activity_Report_Details.this,"Recording Started",Toast.LENGTH_LONG).show();
+
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
+
+        }
+        else {
+            ActivityCompat.requestPermissions(Activity_Report_Details.this , new String[]{
+                    Manifest.permission.RECORD_AUDIO , Manifest.permission.WRITE_EXTERNAL_STORAGE
+            },1);
         }
     }
 
     private void stopRecording() {
-        if (isRecording) {
-            mediaRecorder.stop();
-            mediaRecorder.release();
-            mediaRecorder = null;
-            isRecording = false;
-            Toast.makeText(this, "Recording saved to " + AUDIO_FILE_PATH, Toast.LENGTH_SHORT).show();
-        }
+     mediaRecorder.stop();
+     mediaRecorder.release();
+     Toast.makeText(Activity_Report_Details.this,"Recording Stopped",Toast.LENGTH_SHORT).show();
+
+
     }
 
 
