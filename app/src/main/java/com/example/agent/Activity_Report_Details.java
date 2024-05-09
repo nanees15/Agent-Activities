@@ -44,8 +44,7 @@ public class Activity_Report_Details extends AppCompatActivity {
         NotesEditText= findViewById(R.id.NotesEditText);
         Photo = findViewById(R.id.photoImageView);
         CameraButton = findViewById(R.id.floatingActionButton);
-
-        Objects.requireNonNull(getSupportActionBar()).setBackgroundDrawable(new ColorDrawable(getColor(R.color.white)));
+//        Objects.requireNonNull(getSupportActionBar()).setBackgroundDrawable(new ColorDrawable(getColor(R.color.white)));
 
         CameraButton.setOnClickListener(new View.OnClickListener() {
             @Override
