@@ -12,12 +12,14 @@ import android.widget.ImageButton;
 
 import java.util.Calendar;
 import java.util.Locale;
-import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
+
 
 
 public class Activities_Calendar extends AppCompatActivity {
 
+    CalendarView calendar;
+    ImageButton goto_clients_Btn;
+    ImageButton goto_history_Btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,5 +76,5 @@ public class Activities_Calendar extends AppCompatActivity {
             }
         });
 
-  }
+    }
 }
