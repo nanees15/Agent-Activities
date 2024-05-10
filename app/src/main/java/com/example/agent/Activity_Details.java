@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -22,6 +23,8 @@ public class Activity_Details extends AppCompatActivity {
     String date;
     String activity_name;
     String activity_status_text;
+
+    Button check_inBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +36,7 @@ public class Activity_Details extends AppCompatActivity {
         activity_textView = findViewById(R.id.ActivityName_ID);
         time_textview = findViewById(R.id.timeIDTextview);
         activity_status = findViewById(R.id.statusId);
+        check_inBtn = findViewById(R.id.checkIn_btn);
         intent = getIntent();
         if (intent != null) {
             client_name = intent.getStringExtra("clientName");
@@ -54,6 +58,14 @@ public class Activity_Details extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 finish();
+            }
+        });
+
+        check_inBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), Activity_Report_Details.class);
+                startActivity(i);
             }
         });
     }
