@@ -68,13 +68,13 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/goto_clientsBtn1"
+                app:layout_constraintStart_toEndOf="@+id/goto_clientsBtn"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="1.0"
                 app:srcCompat="@drawable/activity_icon_active" />
 
             <ImageButton
-                android:id="@+id/goto_clientsBtn1"
+                android:id="@+id/goto_clientsBtn"
                 android:layout_width="130dp"
                 android:layout_height="56dp"
                 android:layout_weight="1"
@@ -94,7 +94,7 @@
                 android:layout_weight="1"
                 android:background="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/goto_clientsBtn1"
+                app:layout_constraintEnd_toStartOf="@+id/goto_clientsBtn"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -102,29 +102,14 @@
                 app:srcCompat="@drawable/history_icon" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <CalendarView
-            android:id="@+id/Calendar"
-            android:layout_width="387dp"
-            android:layout_height="341dp"
-            android:dateTextAppearance="@style/CustomCalendarDay"
-            android:focusedMonthDateColor="@color/white"
-            android:theme="@style/CustomCalendarMonth"
-            android:visibility="visible"
-            android:weekDayTextAppearance="@style/CustomCalendarWeek"
-            app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.666"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/date"
-            app:layout_constraintVertical_bias="0.166" />
 
         <TextView
             android:id="@+id/date"
-            android:layout_width="84dp"
-            android:layout_height="33dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:fontFamily="@font/cairo"
             android:gravity="center"
-            android:text="الأنشطة"
+            android:text="sdf"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -134,8 +119,31 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.051" />
 
+        <ImageButton
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.9"
+            app:layout_constraintStart_toEndOf="@+id/date"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.075"
+            app:srcCompat="@drawable/back_btn" />
 
-
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/activities_recyclerview"
+            android:layout_width="353dp"
+            android:layout_height="508dp"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.571"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/date"
+            app:layout_constraintVertical_bias="1.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

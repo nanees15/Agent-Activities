@@ -1,0 +1,69 @@
+<!-- Replace this with your actual layout for each item -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bookitemlinearlayout"
+
+    android:layout_width="350dp"
+
+    android:layout_height="100dp"
+    android:layout_gravity="center|top"
+    android:layout_marginBottom="25dp"
+    android:background="@drawable/background_activity_item"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="317dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/timeId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/cairo"
+            android:gravity="right|end"
+            android:text="09:00 صباحا"
+            android:textColor="#535A5F" />
+
+        <TextView
+            android:id="@+id/activityName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/cairo"
+            android:gravity="left|end"
+            android:text="اسم النشاط 1"
+            android:textColor="#535A5F" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/activityStatusID"
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/cairo"
+            android:gravity="right|center_vertical|end"
+            android:text="مجدول"
+            android:textColor="#258B6B"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/clientName"
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:fontFamily="@font/cairo"
+            android:gravity="left|center_vertical|end"
+            android:text="الاهلي ممكن"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -11,9 +11,23 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
         android:theme="@style/Theme.Agent"
         tools:targetApi="31">
+        <activity
+            android:name=".Activities_Per_Client"
+            android:exported="false" />
+        <activity
+            android:name=".Activities_History"
+            android:exported="false" />
+        <activity
+            android:name=".Client_List"
+            android:exported="false" />
+        <activity
+            android:name=".Activity_Details"
+            android:exported="false" />
+        <activity
+            android:name=".Activities_Per_Day"
+            android:exported="false" />
         <activity
             android:name=".ActivitiesDoneActivity"
             android:exported="false" />

@@ -24,6 +24,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/cairo"
             android:text="تسجيل الدخول"
+            android:textColor="@color/black"
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"

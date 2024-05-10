@@ -47,6 +47,33 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0">
 
+        <ImageButton
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.9"
+            app:layout_constraintStart_toEndOf="@+id/client_name5"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.075"
+            app:srcCompat="@drawable/back_btn" />
+
+        <Button
+            android:id="@+id/add_activity_btn"
+            android:layout_width="350dp"
+            android:layout_height="54dp"
+            android:background="@drawable/green_btn"
+            android:text="اضافة نشاط"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toTopOf="@+id/activities_recyclerInclient"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/client_name5"
+            app:layout_constraintVertical_bias="0.439" />
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout2"
             android:layout_width="390dp"
@@ -68,13 +95,13 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/goto_clientsBtn1"
+                app:layout_constraintStart_toEndOf="@+id/goto_clientsBtn"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="1.0"
-                app:srcCompat="@drawable/activity_icon_active" />
+                app:srcCompat="@drawable/activities_logo" />
 
             <ImageButton
-                android:id="@+id/goto_clientsBtn1"
+                android:id="@+id/goto_clientsBtn"
                 android:layout_width="130dp"
                 android:layout_height="56dp"
                 android:layout_weight="1"
@@ -85,7 +112,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="1.0"
-                app:srcCompat="@drawable/client_icon" />
+                app:srcCompat="@drawable/client_logo_active" />
 
             <ImageButton
                 android:id="@+id/goto_historyBtn"
@@ -94,7 +121,7 @@
                 android:layout_weight="1"
                 android:background="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/goto_clientsBtn1"
+                app:layout_constraintEnd_toStartOf="@+id/goto_clientsBtn"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -102,29 +129,14 @@
                 app:srcCompat="@drawable/history_icon" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <CalendarView
-            android:id="@+id/Calendar"
-            android:layout_width="387dp"
-            android:layout_height="341dp"
-            android:dateTextAppearance="@style/CustomCalendarDay"
-            android:focusedMonthDateColor="@color/white"
-            android:theme="@style/CustomCalendarMonth"
-            android:visibility="visible"
-            android:weekDayTextAppearance="@style/CustomCalendarWeek"
-            app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.666"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/date"
-            app:layout_constraintVertical_bias="0.166" />
 
         <TextView
-            android:id="@+id/date"
-            android:layout_width="84dp"
-            android:layout_height="33dp"
+            android:id="@+id/client_name5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:fontFamily="@font/cairo"
             android:gravity="center"
-            android:text="الأنشطة"
+            android:text="العملاء"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -134,8 +146,18 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.051" />
 
-
-
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/activities_recyclerInclient"
+            android:layout_width="348dp"
+            android:layout_height="441dp"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.571"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/client_name5"
+            app:layout_constraintVertical_bias="1.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
