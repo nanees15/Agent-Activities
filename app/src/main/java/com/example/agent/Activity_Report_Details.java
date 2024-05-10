@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
+import android.media.MediaRecorder;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -21,6 +22,10 @@ import android.widget.Toast;
 import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Objects;
@@ -76,17 +81,28 @@ public class Activity_Report_Details extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         Uri uri = data.getData();
-        Photo.setImageURI(uri);
+        if( uri != null)
+        {
+
+            Photo.setImageURI(uri);
+        }
+
+
+
         switch (requestCode){
-            case REQUEST_CODE_SPEECH_INPUT:{
+            case REQUEST_CODE_SPEECH_INPUT:
                 if(resultCode == RESULT_OK && null!=data){
                     //Get Text Array From voice intent
                     ArrayList<String> result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
                     test.setText(result.get(0));
                 }
-            }
+
+                break;
         }
     }
+
+
+
 
     private void speak() {
 
@@ -99,6 +115,7 @@ public class Activity_Report_Details extends AppCompatActivity {
             startActivityForResult(intent,REQUEST_CODE_SPEECH_INPUT);
 
 
+
         }catch (Exception e)
         {
             Toast.makeText(this,""+e.getMessage(),Toast.LENGTH_SHORT).show();
@@ -106,7 +123,11 @@ public class Activity_Report_Details extends AppCompatActivity {
 
     }
 
+
+
+
+
     //Receive Voice Input & Handle It
 
 
-}
+    }
