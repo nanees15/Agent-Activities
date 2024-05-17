@@ -4,7 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,12 +16,24 @@ public class Client_List extends AppCompatActivity {
 
     private List<MyItem> clientList;
     RecyclerView clients_Recyclerview;
+    ImageButton ActivitiesBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_client_list);
 
         clients_Recyclerview = findViewById(R.id.clients_recyclerView);
+        ActivitiesBtn = findViewById(R.id.goto_activitiesBtn);
+
+
+        ActivitiesBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Client_List.this,Activities_Per_Day.class));
+                finish();
+
+            }
+        });
 
         // Create a list of items
         clientList = new ArrayList<>();

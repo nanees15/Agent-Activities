@@ -78,6 +78,15 @@ public class Activities_Per_Client_Creation extends AppCompatActivity {
                 else
                 {
                     // Hro7 Feen ?
+                    Intent intent = new Intent(Activities_Per_Client_Creation.this, Activities_Per_Client.class);
+
+                    // Pass the selected date as an extra to the intent
+                    intent.putExtra("selectedDate", selectedDate.getTimeInMillis());
+
+                    // Start the next activity
+                    startActivity(intent);
+
+
 
 
 

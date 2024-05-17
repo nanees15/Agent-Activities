@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
@@ -23,6 +24,7 @@ public class Activities_Per_Day extends AppCompatActivity {
     RecyclerView activities_List;
     ImageButton back_btn;
     String formattedDate;
+    ImageButton Go_to_Clients_Btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +33,17 @@ public class Activities_Per_Day extends AppCompatActivity {
         date = findViewById(R.id.date);
         activities_List = findViewById(R.id.activities_recyclerview);
         back_btn = findViewById(R.id.back);
+        Go_to_Clients_Btn = findViewById(R.id.goto_clientsBtn);
+
+        Go_to_Clients_Btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Activities_Per_Day.this,Client_List.class));
+                finish();
+            }
+        });
+
+
 
         Locale arabicLocale = new Locale("ar");
         Locale.setDefault(arabicLocale);
