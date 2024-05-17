@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import android.widget.CalendarView;
 import android.widget.DatePicker;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.TimePicker;
 
 import java.util.Calendar;
 import java.util.Locale;
@@ -22,6 +24,7 @@ public class Activities_Per_Client_Creation extends AppCompatActivity {
     ImageButton PreviousPage;
     CalendarView CalenderCreation;
     Button Finish;
+    Button SelectTime;
     public Calendar selectedDate;
     public Calendar now ;
 
@@ -56,6 +59,25 @@ public class Activities_Per_Client_Creation extends AppCompatActivity {
 
             }
         });
+
+
+//        SelectTime.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                int hour = selectedDate.get(Calendar.HOUR_OF_DAY);
+//                int minute = selectedDate.get(Calendar.MINUTE);
+//                new TimePickerDialog(Activities_Per_Client_Creation.this, new TimePickerDialog.OnTimeSetListener() {
+//                    @Override
+//                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+//                        // Set the selected time
+//                        selectedDate.set(Calendar.HOUR_OF_DAY, hourOfDay);
+//                        selectedDate.set(Calendar.MINUTE, minute);
+//                    }
+//                }, hour, minute, true).show();
+//            }
+//        });
+
+
 
         Finish.setOnClickListener(new View.OnClickListener() {
             @Override

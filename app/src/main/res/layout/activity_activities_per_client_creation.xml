@@ -66,8 +66,8 @@
 
         <ScrollView
             android:id="@+id/scrollView2"
-            android:layout_width="365dp"
-            android:layout_height="391dp"
+            android:layout_width="354dp"
+            android:layout_height="429dp"
             app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.36"
@@ -164,8 +164,8 @@
 
                 <CalendarView
                     android:id="@+id/CalendarInActivitiesCreation"
-                    android:layout_width="313dp"
-                    android:layout_height="221dp"
+                    android:layout_width="213dp"
+                    android:layout_height="301dp"
                     android:layout_marginTop="18sp"
                     android:layout_marginBottom="18sp"
                     android:dateTextAppearance="@style/CustomCalendarDay"
@@ -179,6 +179,15 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/previouspage"
                     app:layout_constraintVertical_bias="0.852" />
+
+                <Button
+                    android:id="@+id/TimeButton"
+                    android:layout_width="210dp"
+                    android:layout_height="53dp"
+                    android:background="@drawable/green_btn"
+                    android:text="ادخل الوقت"
+                    android:textColor="@color/white"
+                    android:textSize="18dp"/>
 
 
             </LinearLayout>
@@ -267,7 +276,8 @@
             app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+            app:layout_constraintTop_toBottomOf="@+id/scrollView2"
+            app:layout_constraintVertical_bias="0.703" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
