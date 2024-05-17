@@ -9,6 +9,10 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
+
 public class Activity_Details extends AppCompatActivity {
 
     Intent intent;
@@ -68,5 +72,17 @@ public class Activity_Details extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+        long selectedDateInMillis = getIntent().getLongExtra("selectedDate", -1);
+        // Convert the received milliseconds back to a Calendar object
+        Calendar selectedDate = Calendar.getInstance();
+        selectedDate.setTimeInMillis(selectedDateInMillis);
+
+        // Format the date in Arabic
+        Locale arabicLocale = new Locale("ar");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", arabicLocale);
+        String formattedDate = dateFormat.format(selectedDate.getTime());
+        date_textView.setText(formattedDate);
+
     }
 }

@@ -37,17 +37,153 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
-        android:layout_width="390dp"
-        android:layout_height="707dp"
+        android:layout_width="359dp"
+        android:layout_height="712dp"
         android:background="@drawable/white_rounded_background"
-
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="0.529">
 
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="201dp"
+            android:layout_height="51dp"
+            android:layout_marginBottom="40dp"
+            android:fontFamily="@font/cairo"
+            android:text="إضافه النشاط"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.397"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/previouspage"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ScrollView
+            android:id="@+id/scrollView2"
+            android:layout_width="365dp"
+            android:layout_height="391dp"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.36"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/previouspage"
+            app:layout_constraintVertical_bias="0.404">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <EditText
+                    android:id="@+id/ActivityNameEditText"
+                    android:layout_width="350dp"
+                    android:layout_height="54dp"
+                    android:layout_marginBottom="18sp"
+                    android:background="@drawable/input_style"
+                    android:ems="10"
+                    android:fontFamily="@font/cairo"
+                    android:gravity="right|center_vertical"
+                    android:hint="ادخل اسم النشاط"
+                    android:inputType="text"
+                    android:paddingHorizontal="12sp"
+                    android:textColorHint="#535A5F"
+                    app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.6"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/previouspage"
+                    app:layout_constraintVertical_bias="0.06" />
+
+
+                <EditText
+                    android:id="@+id/ActivityTypeEditText"
+                    android:layout_width="350dp"
+                    android:layout_height="54dp"
+                    android:layout_marginBottom="20sp"
+                    android:background="@drawable/input_style"
+                    android:ems="10"
+                    android:fontFamily="@font/cairo"
+                    android:gravity="right|center_vertical"
+                    android:hint="ادخل نوع النشاط"
+                    android:inputType="text"
+                    android:paddingHorizontal="12sp"
+                    android:textColorHint="#535A5F"
+                    app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.6"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/previouspage"
+                    app:layout_constraintVertical_bias="0.18" />
+
+                <EditText
+                    android:id="@+id/ActivityLocationEditText"
+                    android:layout_width="350dp"
+                    android:layout_height="54dp"
+                    android:layout_marginBottom="18sp"
+                    android:background="@drawable/input_style"
+                    android:ems="10"
+                    android:fontFamily="@font/cairo"
+                    android:gravity="right|center_vertical"
+                    android:hint="ادخل مكان النشاط"
+                    android:inputType="text"
+                    android:paddingHorizontal="12sp"
+                    android:textColorHint="#535A5F"
+                    app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.6"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/previouspage"
+                    app:layout_constraintVertical_bias="0.297" />
+
+                <TextView
+                    android:id="@+id/DateTextView"
+                    android:layout_width="350dp"
+                    android:layout_height="54dp"
+                    android:background="@drawable/input_style"
+                    android:ems="10"
+                    android:fontFamily="@font/cairo"
+                    android:gravity="right|center_vertical"
+                    android:hint="ادخل تاريخ النشاط"
+                    android:paddingHorizontal="12sp"
+                    android:textColorHint="#535A5F"
+                    android:textSize="18dp"
+                    app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.6"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/previouspage"
+                    app:layout_constraintVertical_bias="0.411" />
+
+
+                <CalendarView
+                    android:id="@+id/CalendarInActivitiesCreation"
+                    android:layout_width="313dp"
+                    android:layout_height="221dp"
+                    android:layout_marginTop="18sp"
+                    android:layout_marginBottom="18sp"
+                    android:dateTextAppearance="@style/CustomCalendarDay"
+                    android:focusedMonthDateColor="@color/white"
+                    android:theme="@style/CustomCalendarMonth"
+                    android:visibility="visible"
+                    android:weekDayTextAppearance="@style/CustomCalendarWeek"
+                    app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.51"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/previouspage"
+                    app:layout_constraintVertical_bias="0.852" />
+
+
+            </LinearLayout>
+        </ScrollView>
 
         <ImageButton
             android:id="@+id/previouspage"
@@ -65,6 +201,8 @@
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
+
+
             android:id="@+id/constraintLayout2"
             android:layout_width="390dp"
             android:layout_height="58dp"
@@ -119,94 +257,18 @@
                 app:srcCompat="@drawable/history_icon" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <EditText
-            android:id="@+id/ActivityNameEditText"
-            android:layout_width="350dp"
-            android:layout_height="54dp"
-            android:background="@drawable/input_style"
-            android:ems="10"
-            android:fontFamily="@font/cairo"
-            android:gravity="right|center_vertical"
-            android:hint="ادخل اسم النشاط"
-            android:inputType="text"
-            android:paddingHorizontal="12sp"
-            android:textColorHint="#535A5F"
-            app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.6"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/previouspage"
-            app:layout_constraintVertical_bias="0.1" />
-
-        <EditText
-            android:id="@+id/ActivityTypeEditText"
-            android:layout_width="350dp"
-            android:layout_height="54dp"
-            android:background="@drawable/input_style"
-            android:ems="10"
-            android:fontFamily="@font/cairo"
-            android:gravity="right|center_vertical"
-            android:hint="ادخل نوع النشاط"
-            android:inputType="text"
-            android:paddingHorizontal="12sp"
-            android:textColorHint="#535A5F"
-            app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.6"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/previouspage"
-            app:layout_constraintVertical_bias="0.237" />
-
-        <EditText
-            android:id="@+id/ActivityLocationEditText"
-            android:layout_width="350dp"
-            android:layout_height="54dp"
-            android:background="@drawable/input_style"
-            android:ems="10"
-            android:fontFamily="@font/cairo"
-            android:gravity="right|center_vertical"
-            android:hint="ادخل مكان النشاط"
-            android:inputType="text"
-            android:paddingHorizontal="12sp"
-            android:textColorHint="#535A5F"
-            app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.6"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/previouspage"
-            app:layout_constraintVertical_bias="0.372" />
-
-        <TextView
-            android:id="@+id/ShowText"
-            android:layout_width="331dp"
-            android:layout_height="159dp"
-            android:background="@drawable/input_style"
-            android:ems="10"
-            android:fontFamily="@font/cairo"
-            android:gravity="right|center_vertical"
-            android:paddingHorizontal="12sp"
-            android:textColorHint="#535A5F"
-            app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.508"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/previouspage"
-            app:layout_constraintVertical_bias="0.8" />
-
         <Button
-            android:id="@+id/DateBtn"
-            android:layout_width="143dp"
-            android:layout_height="44dp"
+            android:id="@+id/FinishingBtn"
+            android:layout_width="205dp"
+            android:layout_height="53dp"
             android:background="@drawable/green_btn"
-            android:text="ادخل تاريخ النشاط"
+            android:text="تم"
             android:textColor="@color/white"
             android:textSize="18dp"
             app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.947"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/previouspage"
-            app:layout_constraintVertical_bias="0.506" />
+            app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

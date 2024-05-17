@@ -16,6 +16,10 @@
         <activity
             android:name=".Activities_Per_Client"
             android:exported="false" />
+
+        <activity
+            android:name=".Activities_Per_Client_Creation"
+            android:exported="false" />
         <activity
             android:name=".Activities_History"
             android:exported="false" />

@@ -13,6 +13,7 @@ import android.speech.RecognizerIntent;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -39,6 +40,8 @@ public class Activity_Report_Details extends AppCompatActivity {
 
     EditText NotesEditText;
     TextView test;
+    Button LeavingButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +52,20 @@ public class Activity_Report_Details extends AppCompatActivity {
         NotesEditText= findViewById(R.id.NotesEditText);
         Photo = findViewById(R.id.photoImageView);
         CameraButton = findViewById(R.id.floatingActionButton);
+        LeavingButton = findViewById(R.id.RegisterLeavingBtn);
+
+        LeavingButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Activity_Report_Details.this, ActivitiesDoneActivity.class);
+
+                // Pass the selected date as an extra to the intent
+
+
+                // Start the next activity
+                startActivity(intent);
+            }
+        });
 //        Objects.requireNonNull(getSupportActionBar()).setBackgroundDrawable(new ColorDrawable(getColor(R.color.white)));
 
         CameraButton.setOnClickListener(new View.OnClickListener() {

@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -18,6 +19,7 @@ public class Activities_Per_Client extends AppCompatActivity {
     RecyclerView activities_List;
     ImageButton back_btn;
     TextView activities_for_client;
+    Button AddActivityBtn;
     Intent intent;
     String client_name;
     @Override
@@ -28,6 +30,17 @@ public class Activities_Per_Client extends AppCompatActivity {
         activities_List = findViewById(R.id.activities_recyclerInclient);
         back_btn = findViewById(R.id.back);
         activities_for_client = findViewById(R.id.client_name5);
+        AddActivityBtn = findViewById(R.id.add_activity_btn);
+
+        AddActivityBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Activities_Per_Client.this, Activities_Per_Client_Creation.class));
+                finish();
+            }
+        });
+
+
 
         intent = getIntent();
         if (intent != null) {
