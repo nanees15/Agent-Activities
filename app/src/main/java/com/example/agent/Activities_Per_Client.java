@@ -64,13 +64,13 @@ public class Activities_Per_Client extends AppCompatActivity {
 
         activities_List.setAdapter(adapter);
 
-// Optionally, set a layout manager to the RecyclerView
         activities_List.setLayoutManager(new LinearLayoutManager(this));
 
 
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                startActivity(new Intent(Activities_Per_Client.this , Client_List.class));
                 finish();
             }
         });
