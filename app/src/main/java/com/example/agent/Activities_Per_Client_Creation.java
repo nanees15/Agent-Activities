@@ -37,6 +37,8 @@ public class Activities_Per_Client_Creation extends AppCompatActivity {
         PreviousPage = findViewById(R.id.previouspage);
         CalenderCreation = findViewById(R.id.CalendarInActivitiesCreation);
         Finish = findViewById(R.id.FinishingBtn);
+        SelectTime =findViewById(R.id.TimeButton);
+
 
         Locale arabicLocale = new Locale("ar");
         Locale.setDefault(arabicLocale);
@@ -47,12 +49,13 @@ public class Activities_Per_Client_Creation extends AppCompatActivity {
         // Update the configuration for the application context
         getResources().updateConfiguration(config, getResources().getDisplayMetrics());
 
+        selectedDate = Calendar.getInstance();
+
         CalenderCreation.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
 
                 // Create a Calendar instance and set the selected date
-                selectedDate = Calendar.getInstance();
                 selectedDate.set(year, month, dayOfMonth);
 
 
@@ -61,21 +64,21 @@ public class Activities_Per_Client_Creation extends AppCompatActivity {
         });
 
 
-//        SelectTime.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                int hour = selectedDate.get(Calendar.HOUR_OF_DAY);
-//                int minute = selectedDate.get(Calendar.MINUTE);
-//                new TimePickerDialog(Activities_Per_Client_Creation.this, new TimePickerDialog.OnTimeSetListener() {
-//                    @Override
-//                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-//                        // Set the selected time
-//                        selectedDate.set(Calendar.HOUR_OF_DAY, hourOfDay);
-//                        selectedDate.set(Calendar.MINUTE, minute);
-//                    }
-//                }, hour, minute, true).show();
-//            }
-//        });
+        SelectTime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int hour = selectedDate.get(Calendar.HOUR_OF_DAY);
+                int minute = selectedDate.get(Calendar.MINUTE);
+                new TimePickerDialog(Activities_Per_Client_Creation.this, new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                        // Set the selected time
+                        selectedDate.set(Calendar.HOUR_OF_DAY, hourOfDay);
+                        selectedDate.set(Calendar.MINUTE, minute);
+                    }
+                }, hour, minute, true).show();
+            }
+        });
 
 
 
