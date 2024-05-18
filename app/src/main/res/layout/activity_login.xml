@@ -37,6 +37,7 @@
         <EditText
             android:id="@+id/phone_inputField"
             android:layout_width="350dp"
+            android:textColor="@color/black"
             android:layout_height="54dp"
             android:background="@drawable/input_style"
             android:ems="10"
@@ -59,6 +60,7 @@
             android:layout_height="54dp"
             android:background="@drawable/input_style"
             android:ems="10"
+            android:textColor="@color/black"
             android:fontFamily="@font/cairo"
             android:gravity="right|center_vertical"
             android:hint="ادخل كلمة السر"
