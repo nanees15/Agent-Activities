@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageButton;
 
 import java.util.ArrayList;
@@ -17,6 +18,9 @@ public class Client_List extends AppCompatActivity {
     private List<MyItem> clientList;
     RecyclerView clients_Recyclerview;
     ImageButton ActivitiesBtn;
+
+    EditText SearchAboutClient;
+    ImageButton SearchButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +28,10 @@ public class Client_List extends AppCompatActivity {
 
         clients_Recyclerview = findViewById(R.id.clients_recyclerView);
         ActivitiesBtn = findViewById(R.id.goto_activitiesBtn);
+        SearchAboutClient = findViewById(R.id.search_bar);
+        SearchButton = findViewById(R.id.SearchButton);
+
+
 
 
         ActivitiesBtn.setOnClickListener(new View.OnClickListener() {
