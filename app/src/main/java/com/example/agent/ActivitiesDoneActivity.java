@@ -16,5 +16,23 @@ public class ActivitiesDoneActivity extends AppCompatActivity {
         setContentView(R.layout.activity_activities_done);
 
 
+        BackToActivitiesBtn = findViewById(R.id.BackToActivitiesBtn);
+
+        BackToActivitiesBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                BackToActivitiesBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        startActivity(new Intent(ActivitiesDoneActivity.this,Activities_Per_Day.class));
+                        finish();
+                    }
+                });
+
+            }
+        });
+
     }
 }

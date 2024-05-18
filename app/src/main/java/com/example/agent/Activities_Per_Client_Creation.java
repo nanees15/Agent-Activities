@@ -40,6 +40,15 @@ public class Activities_Per_Client_Creation extends AppCompatActivity {
         SelectTime =findViewById(R.id.TimeButton);
 
 
+
+        PreviousPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Activities_Per_Client_Creation.this,Activities_Per_Client.class));
+
+            }
+        });
+
         Locale arabicLocale = new Locale("ar");
         Locale.setDefault(arabicLocale);
         Configuration config = new Configuration();
@@ -110,10 +119,6 @@ public class Activities_Per_Client_Creation extends AppCompatActivity {
 
                     // Start the next activity
                     startActivity(intent);
-
-
-
-
 
 
                 }
